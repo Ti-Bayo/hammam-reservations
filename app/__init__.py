@@ -15,6 +15,9 @@ def create_app(config=None):
     from app.routes import bp
     app.register_blueprint(bp)
 
+    from app.api import api
+    app.register_blueprint(api)
+
     from app.donnees import init_db_command
     app.cli.add_command(init_db_command)
 
